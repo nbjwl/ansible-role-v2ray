@@ -12,3 +12,11 @@ def test_hosts_file(host):
     assert f.exists
     assert f.user == 'root'
     assert f.group == 'root'
+
+@pytest.mark.parametrize("service", [
+    "v2ray"
+])
+def test_service_config(host, service):
+    service = host.service(service)
+    assert service.is_running
+    assert service.is_enabled
