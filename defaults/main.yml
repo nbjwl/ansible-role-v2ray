@@ -1,6 +1,6 @@
 ---
 # defaults file for ansible-role-v2ray
-v2ray_install_type: docker
+v2ray_install_type: native
 v2ray_config_path: /etc/v2ray
 
 v2ray_docker_home: /usr/bin/v2ray
