@@ -1,4 +1,4 @@
-Role Name
+v2ray
 =========
 
 A brief description of the role goes here.
@@ -46,4 +46,4 @@ Author Information
 
 An optional section for the role authors to include contact information, or a
 website (HTML is not allowed).
-# ansible-role-v2ray
+
