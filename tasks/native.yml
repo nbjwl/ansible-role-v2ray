@@ -1,0 +1,34 @@
+- name: v2ray logs folder
+  file:
+    path: "{{ v2ray_log_folder }}"
+    state: directory
+
+- name: check v2ray
+  command: /usr/bin/v2ray/v2ray -version
+  register: check_version
+  changed_when: no
+  ignore_errors: yes
+
+- name: force install v2ray if version do not match
+  set_fact:
+    v2ray_install: true
+  when: check_version is failed or check_version.stdout is not search(v2ray_version)
+
+- name: download install shell
+  get_url:
+    url: https://install.direct/go.sh
+    dest: /tmp/go.sh
+    mode: 755
+  when: v2ray_install | default(false) | bool
+
+- name: install v2ray
+  command: /tmp/go.sh --version "{{ v2ray_version }}" {{ '--proxy ' if v2ray_install_proxy is defined else '' }} {{ v2ray_install_proxy | default('') }}
+  register: result
+  changed_when: result is success
+  when: v2ray_install | default(false) | bool
+
+- name: enable and start v2ray
+  service:
+    name: v2ray
+    enabled: yes
+    state: started

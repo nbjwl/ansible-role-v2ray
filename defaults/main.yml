@@ -1,0 +1,37 @@
+---
+# defaults file for ansible-role-v2ray
+v2ray_install_type: docker
+v2ray_config_path: /etc/v2ray
+
+v2ray_docker_home: /usr/bin/v2ray
+v2ray_docker_tag: latest
+v2ray_version: 4.22.1
+
+v2ray_config:
+  log: "{{ v2ray_config_log }}"
+  api: "{{ v2ray_config_api | default(None) }}"
+  dns: "{{ v2ray_config_dns | default(None) }}"
+  stats: "{{ v2ray_config_stats | default(None) }}"
+  routing: "{{ v2ray_config_routing | default(None) }}"
+  policy: "{{ v2ray_config_policy | default(None) }}"
+  reverse: "{{ v2ray_config_reverse | default(None) }}"
+  inbounds: "{{ v2ray_config_inbounds | default(None) }}"
+  outbounds: "{{ v2ray_config_outbounds | default(None) }}"
+  transport: "{{ v2ray_config_transport | default(None) }}"
+
+v2ray_config_log:
+  access: "{{ v2ray_log_folder }}/access.log"
+  error: "{{ v2ray_log_folder }}/error.log"
+  loglevel: "{{ v2ray_log_level }}"
+
+v2ray_log_level: warning
+v2ray_log_folder: /var/log/v2ray
+# v2ray_config_api: {}
+# v2ray_config_dns: {}
+# v2ray_config_stats: {}
+# v2ray_config_routing: {}
+# v2ray_config_policy: {}
+# v2ray_config_reverse: {}
+# v2ray_config_inbounds: []
+# v2ray_config_outbounds: []
+# v2ray_config_transport: {}

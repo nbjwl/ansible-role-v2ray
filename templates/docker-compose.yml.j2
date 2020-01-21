@@ -1,0 +1,7 @@
+version: '3'
+services:
+  homebridge:
+    image: nbjwl/v2ray:{{ v2ray_docker_tag }}
+    restart: always
+    volumes:
+      - "{{v2ray_config_path}}:/etc/v2ray/config.json"

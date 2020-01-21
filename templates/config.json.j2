@@ -1,0 +1,12 @@
+{
+  "log": {{ v2ray_config_log | to_json }},
+  "api": {{ v2ray_config_api | default(None) | to_json}},
+  "dns": {{ v2ray_config_dns | default(None) | to_json}},
+  "stats": {{ v2ray_config_state | default(None) | to_json}},
+  "routing": {{ v2ray_config_routing | default(None) | to_json}},
+  "policy": {{ v2ray_config_policy | default(None) | to_json}},
+  "reverse": {{ v2ray_config_reverse | default(None) | to_json}},
+  "inbounds": {{ v2ray_config_inbounds | default(None) | to_json}},
+  "outbounds": {{ v2ray_config_outbounds | default(None) | to_json}},
+  "transport": {{ v2ray_config_transport | default(None) | to_json}}
+}

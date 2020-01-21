@@ -1,0 +1,14 @@
+---
+- name: Converge
+  hosts: all
+  roles:
+    - role: ansible-role-v2ray
+      vars:
+        docker_apt_repository: >
+          deb [arch={{ docker_apt_arch }}]
+          http://mirrors.aliyun.com/docker-ce/linux/{{ ansible_distribution|lower }}
+          {{ ansible_distribution_release }} {{ docker_apt_release_channel }}
+      environment:
+        http_proxy: "{{ lookup('env','http_proxy') }}"
+        https_proxy: "{{ lookup('env','https_proxy') }}"
+        no_proxy: "{{ lookup('env','no_proxy') }}"

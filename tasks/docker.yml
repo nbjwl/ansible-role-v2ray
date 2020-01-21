@@ -1,0 +1,16 @@
+- name: create docker home
+  file:
+    path: "{{ v2ray_docker_home }}"
+    state: directory
+
+- name: create docker compose
+  template:
+    src: docker-compose.yml.j2
+    dest: "{{ v2ray_docker_home }}/docker-compose.yml"
+
+- name: start containers
+  docker_compose:
+    project_name: v2ray
+    project_src: "{{ v2ray_docker_home }}"
+    state: present
+    restarted: yes
