@@ -1,9 +1,11 @@
 v2ray
 =========
 
-A brief description of the role goes here.
+![Test Status](https://github.com/nbjwl/ansible-role-samba/workflows/Test/badge.svg)
 
-Requirements
+This project is for v2ray installation
+
+<!-- Requirements
 ------------
 
 Any pre-requisites that may not be covered by Ansible itself or the role should
@@ -34,16 +36,10 @@ passed in as parameters) is always nice for users too:
 
     - hosts: servers
       roles:
-         - { role: ansible-role-v2ray, x: 42 }
+         - { role: ansible-role-v2ray } -->
 
 License
 -------
 
-BSD
-
-Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a
-website (HTML is not allowed).
+MIT
 
