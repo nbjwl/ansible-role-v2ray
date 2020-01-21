@@ -1,7 +1,7 @@
 v2ray
 =========
 
-![Test Status](https://github.com/nbjwl/ansible-role-samba/workflows/Test/badge.svg)
+![Test Status](https://github.com/nbjwl/ansible-role-v2ray/workflows/Test/badge.svg)
 
 This project is for v2ray installation
 
