@@ -1,8 +1,6 @@
----
 # handlers file for ansible-role-v2ray
 ---
 - name: restart v2ray
-  block: 
-  - service: 
-      name: v2ray 
-      state: restarted
+  service:
+    name: v2ray
+    state: restarted
