@@ -16,13 +16,13 @@
 
 - name: download install shell
   get_url:
-    url: https://install.direct/go.sh
-    dest: /tmp/go.sh
+    url: "{{ v2ray_install_shell }}"
+    dest: /tmp/install_v2ray.sh
     mode: 755
   when: v2ray_install | default(false) | bool
 
 - name: install v2ray
-  command: /tmp/go.sh --version "{{ v2ray_version }}" {{ '--proxy ' if v2ray_install_proxy is defined else '' }} {{ v2ray_install_proxy | default('') }}
+  command: /tmp/install_v2ray.sh --version "{{ v2ray_version }}" {{ '--proxy ' if v2ray_install_proxy is defined else '' }} {{ v2ray_install_proxy | default('') }}
   register: result
   changed_when: result is success
   when: v2ray_install | default(false) | bool

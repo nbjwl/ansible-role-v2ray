@@ -2,7 +2,9 @@
 # defaults file for ansible-role-v2ray
 v2ray_install_type: native
 v2ray_config_path: /etc/v2ray
-
+v2ray_install_shell: https://install.direct/go.sh
+# v2ray_install_local: 
+# v2ray_install_proxy: 
 v2ray_docker_home: /usr/bin/v2ray
 v2ray_docker_tag: latest
 v2ray_version: 4.22.1
