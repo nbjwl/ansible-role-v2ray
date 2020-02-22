@@ -16,4 +16,5 @@
   template:
     src: config.json.j2
     dest: "{{ v2ray_config_path }}/config.json"
-  notify: restart v2ray
+  notify:
+    - restart v2ray
