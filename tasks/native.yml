@@ -2,7 +2,7 @@
   file:
     path: "{{ v2ray_log_folder }}"
     state: directory
-    mode: u=rwX,g=rwX,o=rX
+    mode: u=rwX,g=rwX,o=rwX
     recurse: yes
 
 - name: check v2ray
