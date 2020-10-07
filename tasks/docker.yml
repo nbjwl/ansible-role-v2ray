@@ -2,11 +2,13 @@
   file:
     path: "{{ v2ray_docker_home }}"
     state: directory
+    mode: 0744
 
 - name: create docker compose
   template:
     src: docker-compose.yml.j2
     dest: "{{ v2ray_docker_home }}/docker-compose.yml"
+    mode: 0644
 
 - name: start containers
   docker_compose:

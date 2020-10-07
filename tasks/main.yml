@@ -3,6 +3,7 @@
   file:
     path: "{{ v2ray_config_path }}"
     state: directory
+    mode: 0744
 
 - name: install v2ray (docker)
   include_tasks: docker.yml
@@ -16,6 +17,6 @@
   template:
     src: config.json.j2
     dest: "{{ v2ray_config_path }}/config.json"
-    mode: "0644"
+    mode: 0644
   notify:
     - restart v2ray
