@@ -3,7 +3,7 @@
   file:
     path: "{{ v2ray_config_path }}"
     state: directory
-    mode: 0744
+    mode: 0755
 
 - name: install v2ray (docker)
   include_tasks: docker.yml

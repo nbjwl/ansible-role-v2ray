@@ -2,7 +2,8 @@
   file:
     path: "{{ v2ray_log_folder }}"
     state: directory
-    mode: 0744
+    mode: u=rwX,g=rwX,o=rX
+    recurse: yes
 
 - name: check v2ray
   command: /usr/bin/v2ray/v2ray -version
