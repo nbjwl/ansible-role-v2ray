@@ -6,7 +6,7 @@
     recurse: yes
 
 - name: check v2ray
-  command: /usr/bin/v2ray/v2ray -version
+  command: /usr/local/bin/v2ray -version
   register: check_version
   changed_when: no
   ignore_errors: yes
